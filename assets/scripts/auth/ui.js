@@ -37,9 +37,9 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function (response) {
   $('#signup-message').text('Signed out successfully.')
   //Sign out message should display when logged out.
-  $('.unauthenticated').show()
+  // $('.unauthenticated').show()
   //Sign up + login reappear
-  $('.authenticated').hide()
+  // $('.authenticated').hide()
   //Change password, played games, sign out, and start game hidden.
   $('#signup-message').show()
   //Shows the signed out message.
@@ -57,5 +57,7 @@ module.exports = {
   signInSuccess,
   signInFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }

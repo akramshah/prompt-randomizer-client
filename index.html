@@ -18,6 +18,7 @@
   <div class="unauthenticated">
     <p id="signup-message"></p>
     <p id="message"></p>
+    <p id="prompt-message"></p>
   </div>
   <div class="sign-up-style">
     <form id="sign-up">
@@ -42,6 +43,12 @@
     </form>
     <div class="authenticated-buttons">
       <button id="sign-out" type="button" name="button">Sign Out</button>
+      <div class="sign-up-style">
+    <form id="new-prompt">
+      <input name="prompt[title]" type="text" placeholder="Enter Title" />
+      <input name="prompt[description]" type="text" placeholder="Enter Description" />
+      <button type="submit">Submit Prompt</button>
+    </form>
 </body>
 
 </html>
