@@ -14,4 +14,5 @@ $(() => {
  $("#change-password").on("submit", authEvents.onChangePassword); //Change password button
  $("#sign-out").on("click", authEvents.onSignOut); //Sign out button
  $("#new-prompt").on("submit", promptEvents.onNewPrompt)
+ $("#view-prompts").on("click", promptEvents.onViewPrompts)
 })

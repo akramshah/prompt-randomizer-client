@@ -13,6 +13,18 @@ const createPrompt = function (promptData) {
   });
 };
 
+const viewPrompts = function (promptData) {
+  return $.ajax({
+    url: config.apiUrl + "/prompts",
+    method: "GET",
+    data: promptData,
+    headers: {
+      Authorization: "Bearer " + store.user.token,
+    },
+  });
+  };
+
 module.exports = {
-  createPrompt
+  createPrompt,
+  viewPrompts
 }

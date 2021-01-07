@@ -13,6 +13,16 @@ const onNewPrompt = function (event) {
   .catch(ui.newPromptFailure)
 } 
 
+const onViewPrompts = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const promptData = getFormFields(form)
+  api.viewPrompts()
+  .then(ui.viewPromptsSuccess)
+  .catch(ui.viewPromptsFailure)
+}
+
 module.exports = {
-  onNewPrompt
+  onNewPrompt,
+  onViewPrompts
 }
