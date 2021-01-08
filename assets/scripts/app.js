@@ -15,4 +15,6 @@ $(() => {
  $("#sign-out").on("click", authEvents.onSignOut); //Sign out button
  $("#new-prompt").on("submit", promptEvents.onNewPrompt)
  $("#view-prompts").on("click", promptEvents.onViewPrompts)
+ $("#view-all-prompts").on("click", promptEvents.onViewAllPrompts)
+ $("#update-prompt").on("submit", promptEvents.onUpdatePrompt)
 })

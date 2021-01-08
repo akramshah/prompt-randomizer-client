@@ -22,7 +22,26 @@ const onViewPrompts = function (event) {
   .catch(ui.viewPromptsFailure)
 }
 
+const onViewAllPrompts = function (event) {
+  const form = event.target
+  const promptData = getFormFields(form)
+  api.viewAllPrompts(promptData)
+    .then(ui.viewAllPromptsSuccess)
+    .catch(ui.viewAllPromptsFailure)
+}
+
+const onUpdatePrompt = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const promptData = getFormFields(form)
+  api.updatePrompt(promptData)
+  .then(ui.updatePromptSuccess)
+  .catch(ui.updatePromptFailure)
+}
+
 module.exports = {
   onNewPrompt,
-  onViewPrompts
+  onViewPrompts,
+  onViewAllPrompts,
+  onUpdatePrompt
 }

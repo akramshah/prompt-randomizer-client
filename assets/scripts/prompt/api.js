@@ -24,7 +24,31 @@ const viewPrompts = function (promptData) {
   });
   };
 
+  const viewAllPrompts = function (promptData) {
+    return $.ajax({
+      url: config.apiUrl + "/prompts/all",
+      method: "GET",
+      data: promptData,
+      headers: {
+        Authorization: "Bearer " + store.user.token,
+      },
+    });
+  };
+
+  const updatePrompt = function (promptData) {
+    return $.ajax({
+      url: config.apiUrl + '/prompts/' + promptData.prompt._id,
+      method: 'PATCH',
+      data: promptData,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      },
+    })
+  }
+
 module.exports = {
   createPrompt,
-  viewPrompts
+  viewPrompts,
+  viewAllPrompts,
+  updatePrompt
 }
