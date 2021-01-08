@@ -24,7 +24,7 @@ const viewPrompts = function (promptData) {
   });
   };
 
-  const viewAllPrompts = function (promptData) {
+  const randomizePrompts = function (promptData) {
     return $.ajax({
       url: config.apiUrl + "/prompts/all",
       method: "GET",
@@ -60,7 +60,7 @@ const viewPrompts = function (promptData) {
 module.exports = {
   createPrompt,
   viewPrompts,
-  viewAllPrompts,
+  randomizePrompts,
   updatePrompt,
   deletePrompt
 }

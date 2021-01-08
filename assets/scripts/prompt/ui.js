@@ -23,13 +23,21 @@ const viewPromptsFailure = function (response) {
   $('#prompt-message').text('Cannot view prompts.')
 }
 
-const viewAllPromptsSuccess = function (response) {
+const randomPromptSuccess = function (response) {
   store.prompt = response.prompt
+  console.log(store.prompt)
   const userPrompts = store.prompt
-  console.log(userPrompts)
+  const randomize = function () {
+    let randomPrompt = userPrompts[Math.floor(Math.random() * userPrompts.length)];
+    const randomPromptString = JSON.stringify(randomPrompt)
+    $('#prompt-message').html(randomPromptString)
+    console.log(randomPrompt)
+  }
+   randomize()
+  // console.log(userPrompts)
 }
 
-const viewAllPromptsFailure = function (response) {
+const randomPromptFailure = function (response) {
   $('#prompt-message').text('Cannot view prompts.')
 }
 
@@ -59,8 +67,8 @@ module.exports = {
   createPromptFailure,
   viewPromptsSuccess,
   viewPromptsFailure,
-  viewAllPromptsSuccess,
-  viewAllPromptsFailure,
+  randomPromptSuccess,
+  randomPromptFailure,
   updatePromptSuccess,
   updatePromptFailure,
   deletePromptSuccess,

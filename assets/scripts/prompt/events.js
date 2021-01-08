@@ -22,12 +22,12 @@ const onViewPrompts = function (event) {
   .catch(ui.viewPromptsFailure)
 }
 
-const onViewAllPrompts = function (event) {
+const onRandomizePrompts = function (event) {
   const form = event.target
   const promptData = getFormFields(form)
-  api.viewAllPrompts(promptData)
-    .then(ui.viewAllPromptsSuccess)
-    .catch(ui.viewAllPromptsFailure)
+  api.randomizePrompts(promptData)
+    .then(ui.randomPromptSuccess)
+    .catch(ui.randomPromptFailure)
 }
 
 const onUpdatePrompt = function (event) {
@@ -54,7 +54,7 @@ const onDeletePrompt = function (event) {
 module.exports = {
   onNewPrompt,
   onViewPrompts,
-  onViewAllPrompts,
+  onRandomizePrompts,
   onUpdatePrompt,
-  onDeletePrompt
+  onDeletePrompt,
 }
