@@ -17,4 +17,5 @@ $(() => {
  $("#view-prompts").on("click", promptEvents.onViewPrompts)
  $("#view-all-prompts").on("click", promptEvents.onViewAllPrompts)
  $("#update-prompt").on("submit", promptEvents.onUpdatePrompt)
+ $("#delete-prompt").on("submit", promptEvents.onDeletePrompt)
 })

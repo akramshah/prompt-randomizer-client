@@ -39,9 +39,22 @@ const onUpdatePrompt = function (event) {
   .catch(ui.updatePromptFailure)
 }
 
+const onDeletePrompt = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const promptData = getFormFields(form)
+  console.log(promptData)
+  console.log(promptData.prompt)
+  api.deletePrompt(promptData)
+  .then(ui.deletePromptSuccess)
+  .catch(ui.deletePromptFailure)
+}
+
+
 module.exports = {
   onNewPrompt,
   onViewPrompts,
   onViewAllPrompts,
-  onUpdatePrompt
+  onUpdatePrompt,
+  onDeletePrompt
 }

@@ -38,10 +38,20 @@ const updatePromptSuccess = function (response) {
     const updatedPrompt = store.prompt
     const promptString = JSON.stringify(updatedPrompt)
     $('#prompt-message').html(promptString)
+    $('form').trigger('reset')
 }
 
 const updatePromptFailure = function (response) {
-  $('#prompt-message').text('Cannot view prompts.')
+  $('#prompt-message').text('Cannot update prompt. Please check if ID is correct.')
+}
+
+const deletePromptSuccess = function (response) {
+  $('#prompt-message').text('Prompt deleted successfully.')
+  $('form').trigger('reset')
+}
+
+const deletePromptFailure = function (response) {
+  $('#prompt-message').text('Could not delete prompt. Try again with correct ID.')
 }
 
 module.exports = {
@@ -52,5 +62,7 @@ module.exports = {
   viewAllPromptsSuccess,
   viewAllPromptsFailure,
   updatePromptSuccess,
-  updatePromptFailure
+  updatePromptFailure,
+  deletePromptSuccess,
+  deletePromptFailure
 }

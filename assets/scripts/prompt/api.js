@@ -46,9 +46,21 @@ const viewPrompts = function (promptData) {
     })
   }
 
+    const deletePrompt = function (promptData) {
+      return $.ajax({
+        url: config.apiUrl + '/prompts/' + promptData.prompt._id,
+        method: 'DELETE',
+        data: promptData,
+        headers: {
+          Authorization: 'Bearer ' + store.user.token
+        },
+      })
+    }
+
 module.exports = {
   createPrompt,
   viewPrompts,
   viewAllPrompts,
-  updatePrompt
+  updatePrompt,
+  deletePrompt
 }
