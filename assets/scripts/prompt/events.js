@@ -54,17 +54,20 @@ const onShowUserSettings = function (event) {
 $(".back").show();
   $(".user-settings").show();
   $(".prompter").hide();
+  $("#prompt-message").html('');
   $(".user-settings-button").hide();
   $(".randomizer").hide()
-  $("#auth-message").hide()
+  $(".auth-message").hide()
 }
 
  const onBackButton = function (event) {
    $(".user-settings").hide();
    $(".prompter").show();
    $(".user-settings-button").show();
-   $("#auth-message").hide()
+   $(".auth-message").hide()
    $(".back").hide();
+     $("#prompt-message").html('');
+
  }
 
  const onHidePrompts = function (event) {

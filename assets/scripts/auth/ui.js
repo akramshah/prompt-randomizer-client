@@ -11,14 +11,14 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function (error) {
-  $('#unauthenticated-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
+  $('.auth-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
 }
 const signInSuccess = function (response) {
   $('.sign-up').hide();
   $('.sign-in').hide();
   $(".signout-button").show();
   $(".auth-message").show()
-  $('#auth-message').text('Signed in successfully.')
+  $('.auth-message').text('Signed in successfully.')
   $(".prompt-index").show();
   $(".prompter").show();
   $(".randomizer").show();
@@ -32,16 +32,19 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (error) {
-    $('#unauthenticated-message').text('Sign in failed. Error: ' + error.responseJSON.message)
+    $('.auth-message').text('Sign in failed. Error: ' + error.responseJSON.message)
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('Password changed successfully.')
+  $('#prompt-message').hide()
+  $(".auth-message").show()
+  $('.auth-message').text('Password changed successfully.')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Password change failed. Error: ' + error.responseJSON.message)
+  $(".auth-message").show()
+  $('.auth-message').text('Password change failed. Error: ' + error.responseJSON.message)
 }
 
 const signOutSuccess = function (response) {
@@ -56,7 +59,8 @@ const signOutSuccess = function (response) {
   $(".randomizer").hide();
   $(".back").hide();
   $("#prompt-message").text('')
-  $('#auth-message').text('')
+  $(".auth-message").show()
+  $('.auth-message').text('')
   //Sign out message should display when logged out.
   // $('.unauthenticated').show()
   //Sign up + login reappear
@@ -67,7 +71,8 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Sign out failed. Error: ' + error.responseJSON.message)
+  $(".auth-message").show()
+  $('.auth-message').text('Sign out failed. Error: ' + error.responseJSON.message)
   //These error messages are default mongoose messages. In the future, change to custom errors.
 }
 
