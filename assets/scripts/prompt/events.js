@@ -50,6 +50,27 @@ const onDeletePrompt = function (event) {
   .catch(ui.deletePromptFailure)
 }
 
+const onShowUserSettings = function (event) {
+$(".back").show();
+  $(".user-settings").show();
+  $(".prompter").hide();
+  $(".user-settings-button").hide();
+  $(".randomizer").hide()
+  $("#auth-message").hide()
+}
+
+ const onBackButton = function (event) {
+   $(".user-settings").hide();
+   $(".prompter").show();
+   $(".user-settings-button").show();
+   $("#auth-message").hide()
+   $(".back").hide();
+ }
+
+ const onHidePrompts = function (event) {
+   $("#prompt-message").html('');
+ }
+
 
 module.exports = {
   onNewPrompt,
@@ -57,4 +78,7 @@ module.exports = {
   onRandomizePrompts,
   onUpdatePrompt,
   onDeletePrompt,
+  onShowUserSettings,
+  onBackButton,
+  onHidePrompts
 }

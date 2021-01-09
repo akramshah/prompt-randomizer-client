@@ -1,13 +1,15 @@
 const store = require('./../store')
 
-const createPromptSuccess = function (response) {
-  $('#prompt-message').text('Prompt created.')
+const newPromptSuccess = function (response) {
   response.prompt = store.prompt
+  $("#prompt-message").text('Prompt created.')
+  $(".auth-message").hide()
   console.log(store.prompt)
+  $('form').trigger('reset')
 }
 
-const createPromptFailure = function (response) {
-  $('#prompt-message').text('Prompt creation failed.')
+const newPromptFailure = function (error) {
+  $('#prompt-message').html('Prompt creation failed.')
 }
 
 
@@ -19,11 +21,12 @@ const viewPromptsSuccess = function (response) {
   console.log(store.prompt)
 }
 
-const viewPromptsFailure = function (response) {
-  $('#prompt-message').text('Cannot view prompts.')
+const viewPromptsFailure = function (error) {
+  $('#prompt-message').html('Cannot view prompts.')
 }
 
 const randomPromptSuccess = function (response) {
+  $("#auth-message").hide()
   store.prompt = response.prompt
   console.log(store.prompt)
   const userPrompts = store.prompt
@@ -37,7 +40,7 @@ const randomPromptSuccess = function (response) {
   // console.log(userPrompts)
 }
 
-const randomPromptFailure = function (response) {
+const randomPromptFailure = function (error) {
   $('#prompt-message').text('Cannot view prompts.')
 }
 
@@ -45,26 +48,27 @@ const updatePromptSuccess = function (response) {
     store.prompt = response.prompt
     const updatedPrompt = store.prompt
     const promptString = JSON.stringify(updatedPrompt)
-    $('#prompt-message').html(promptString)
+    console.log(promptString)
+    $('#prompt-message').html('Updated: ' + promptString)
     $('form').trigger('reset')
 }
 
-const updatePromptFailure = function (response) {
+const updatePromptFailure = function (error) {
   $('#prompt-message').text('Cannot update prompt. Please check if ID is correct.')
 }
 
 const deletePromptSuccess = function (response) {
-  $('#prompt-message').text('Prompt deleted successfully.')
+  $('#prompt-message').text('Prompt deleted.')
   $('form').trigger('reset')
 }
 
-const deletePromptFailure = function (response) {
+const deletePromptFailure = function (error) {
   $('#prompt-message').text('Could not delete prompt. Try again with correct ID.')
 }
 
 module.exports = {
-  createPromptSuccess,
-  createPromptFailure,
+  newPromptSuccess,
+  newPromptFailure,
   viewPromptsSuccess,
   viewPromptsFailure,
   randomPromptSuccess,

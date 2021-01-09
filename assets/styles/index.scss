@@ -1,1 +1,55 @@
 @import '~bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: "lobster";
+  src: url("public/Lobster-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto-condensed";
+  src: url("public/RobotoCondensed-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+   display: flex;
+   flex-direction: column-wrap;
+}
+
+html, body{
+  margin: 30px;
+  height: 100%;
+}
+
+body {
+  background-color: #d9d1cf;
+  width: 100%;
+}
+.unauthenticated {
+display: flex;
+align-items: flex-end;
+}
+
+
+h1 {
+  font-family: lobster;
+  font-size: 120px;
+  color: #e83642;
+  // -webkit-text-stroke: 2px #102429;
+  display: flex;
+
+}
+
+button {
+  background-color: #7199a6;
+  border-radius: 10px;
+  font-family: roboto-condensed;
+}
+
+input {
+  font-family: roboto-condensed;
+  border-radius: 10px;
+}

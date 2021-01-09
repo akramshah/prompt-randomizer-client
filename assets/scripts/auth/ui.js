@@ -1,18 +1,28 @@
 const store = require('./../store')
 
 const signUpSuccess = function (response) {
-  $('#signup-message').text('Account created successfully.')
+  $(".sign-up").show();
+  $(".sign-in").show();
+  $('#unauthenticated-message').text('Signed up successfully.')
+  
   //Display message when account is created.
   $('form').trigger('reset')
-  $("#signup-message").show();
   //Show the sign-up message.
 }
 
 const signUpFailure = function (error) {
-  $('#signup-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
+  $('#unauthenticated-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
 }
 const signInSuccess = function (response) {
-  $('#message').text('Signed in successfully.')
+  $('.sign-up').hide();
+  $('.sign-in').hide();
+  $(".signout-button").show();
+  $(".auth-message").show()
+  $('#auth-message').text('Signed in successfully.')
+  $(".prompt-index").show();
+  $(".prompter").show();
+  $(".randomizer").show();
+  $(".user-settings-button").show();
   store.user = response.user
   //store the User's credentials when signing in
   // $('.unauthenticated').hide()
@@ -22,7 +32,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (error) {
-    $('#message').text('Sign in failed. Error: ' + error.responseJSON.message)
+    $('#unauthenticated-message').text('Sign in failed. Error: ' + error.responseJSON.message)
 }
 
 const changePasswordSuccess = function (response) {
@@ -35,13 +45,23 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (response) {
-  $('#signup-message').text('Signed out successfully.')
+  $(".sign-up").show();
+  $(".sign-in").show();
+  $('#unauthenticated-message').text('Signed out successfully.')
+  $(".prompter").hide();
+  $(".prompt-index").hide();
+  $(".signout-button").hide();
+  $(".user-settings").hide();
+  $(".user-settings-button").hide();
+  $(".randomizer").hide();
+  $(".back").hide();
+  $("#prompt-message").text('')
+  $('#auth-message').text('')
   //Sign out message should display when logged out.
   // $('.unauthenticated').show()
   //Sign up + login reappear
   // $('.authenticated').hide()
   //Change password, played games, sign out, and start game hidden.
-  $('#signup-message').show()
   //Shows the signed out message.
   $('form').trigger('reset')
 }

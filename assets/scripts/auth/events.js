@@ -42,6 +42,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+
 module.exports = {
   onSignUp,
   onSignIn,
