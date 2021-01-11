@@ -28,4 +28,8 @@ $(() => {
  $("#delete-prompt").on("submit", promptEvents.onDeletePrompt)
  $(".user-settings-button").on("click", promptEvents.onShowUserSettings)
  $("#back-button").on("click", promptEvents.onBackButton)
+ $("#update-prompts").on("click", promptEvents.onUpdateButton)
+ $("#delete-prompts").on("click", promptEvents.onDeleteButton)
+ $("#change-pw").on("click", promptEvents.onChangepwButton)
+ $("#submit-prompts").on("click", promptEvents.onSubmitButton)
 })

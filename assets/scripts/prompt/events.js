@@ -58,20 +58,49 @@ $(".back").show();
   $(".user-settings-button").hide();
   $(".randomizer").hide()
   $(".auth-message").hide()
+  $("#update-prompt").hide()
+  $("#delete-prompt").hide()
+  $("#change-password").hide()
 }
 
  const onBackButton = function (event) {
    $(".user-settings").hide();
    $(".prompter").show();
+   $(".randomizer").show();
    $(".user-settings-button").show();
    $(".auth-message").hide()
    $(".back").hide();
-     $("#prompt-message").html('');
+   $("#prompt-message").html('');
+  $("#prompt-display").hide();
+  $("#new-prompt").hide();
+  $("#submit-prompts").show();
+ }
 
+ const onUpdateButton = function (event) {
+$("#update-prompt").show()
+$("#delete-prompt").hide() 
+$("#change-password").hide()
+ }
+
+  const onDeleteButton = function (event) {
+$("#update-prompt").hide()
+$("#delete-prompt").show()
+$("#change-password").hide()
+}
+
+ const onChangepwButton = function (event) {
+$("#update-prompt").hide()
+$("#delete-prompt").hide()
+$("#change-password").show()
  }
 
  const onHidePrompts = function (event) {
-   $("#prompt-message").html('');
+   $("#prompt-display").html('');
+ }
+
+ const onSubmitButton = function (event) {
+   $("#new-prompt").show();
+   $("#submit-prompts").hide();
  }
 
 
@@ -83,5 +112,9 @@ module.exports = {
   onDeletePrompt,
   onShowUserSettings,
   onBackButton,
-  onHidePrompts
+  onHidePrompts,
+  onUpdateButton,
+  onDeleteButton,
+  onChangepwButton,
+  onSubmitButton
 }

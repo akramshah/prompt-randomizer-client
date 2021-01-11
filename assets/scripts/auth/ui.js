@@ -14,6 +14,8 @@ const signUpFailure = function (error) {
   $('.auth-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
 }
 const signInSuccess = function (response) {
+  $("#new-prompt").hide();
+  $("#submit-prompts").show();
   $('.sign-up').hide();
   $('.sign-in').hide();
   $(".signout-button").show();
@@ -23,6 +25,8 @@ const signInSuccess = function (response) {
   $(".prompter").show();
   $(".randomizer").show();
   $(".user-settings-button").show();
+  $(".header-buttons").show();
+  $(".blurb").hide();
   store.user = response.user
   //store the User's credentials when signing in
   // $('.unauthenticated').hide()
@@ -32,13 +36,11 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (error) {
-    $('.auth-message').text('Sign in failed. Error: ' + error.responseJSON.message)
+    $('#unauthenticated-message').text('Sign in failed. Error: ' + error.responseJSON.message)
 }
 
 const changePasswordSuccess = function (response) {
-  $('#prompt-message').hide()
-  $(".auth-message").show()
-  $('.auth-message').text('Password changed successfully.')
+  $('#prompt-display').html('Password changed successfully.')
   $('form').trigger('reset')
 }
 
@@ -61,6 +63,7 @@ const signOutSuccess = function (response) {
   $("#prompt-message").text('')
   $(".auth-message").show()
   $('.auth-message').text('')
+  $(".blurb").show();
   //Sign out message should display when logged out.
   // $('.unauthenticated').show()
   //Sign up + login reappear

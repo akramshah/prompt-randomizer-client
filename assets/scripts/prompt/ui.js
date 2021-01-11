@@ -1,12 +1,14 @@
 const store = require('./../store')
 
 const newPromptSuccess = function (response) {
+  $("#new-prompt").hide();
+  $("#submit-prompts").show();
   store.prompt = response.prompt
   const newPrompt = store.prompt
   $("#prompt-message").html(`
     <div>
-    <h5>Created:</h5>
-    <h6>Title: ${newPrompt.title}</h5>
+    <p>Created:</p>
+    <p><b>Title: ${newPrompt.title}</b></p>
     <p>ID: ${newPrompt._id}</p>
     <p>Description: ${newPrompt.description}</p>
     
@@ -23,23 +25,25 @@ const newPromptFailure = function (error) {
 
 
 const viewPromptsSuccess = function (response) {
+  $("#prompt-display").show();
   store.prompt = response.prompt
   const userPrompts = store.prompt
   let promptsHtml = ''
   userPrompts.forEach(function (prompt) {
     const promptHtml = (`
     <div>
-    <h5>Title: ${prompt.title}</h5>
+    <p><b>Title: ${prompt.title}</b></p>
     <p>ID: ${prompt._id}</p>
     <p>Description: ${prompt.description}</p>
-    
+    </div>
     `)
     promptsHtml += promptHtml
   })
   // const promptString = JSON.stringify(userPrompts)
   $(".auth-message").hide()
-  $('#prompt-message').html(promptsHtml)
+  $('#prompt-display').html(promptsHtml)
   console.log(store.prompt)
+  
 }
 
 const viewPromptsFailure = function (error) {
@@ -56,10 +60,10 @@ const randomPromptSuccess = function (response) {
     let randomPrompt = userPrompts[Math.floor(Math.random() * userPrompts.length)];
     $('#prompt-message').html(`
     <div>
-    <h5>Title: ${randomPrompt.title}</h5>
+    <p><b>Title: ${randomPrompt.title}</b></p>
     <p>ID: ${randomPrompt._id}</p>
     <p>Description: ${randomPrompt.description}</p>
-    
+    </div>
     `)
     console.log(randomPrompt)
   }
@@ -78,31 +82,31 @@ const updatePromptSuccess = function (response) {
     // const promptString = JSON.stringify(updatedPrompt)
     // console.log(promptString)
     $(".auth-message").hide()
-    $('#prompt-message').html(`
+    $('#prompt-display').html(`
     <div>
-    <h5>Updated:</h5>
-    <h6>Title: ${updatedPrompt.title}</h5>
+    <p><b>Updated:</b></p>
+    <p><b>Title: ${updatedPrompt.title}</b></p>
     <p>ID: ${updatedPrompt._id}</p>
     <p>Description: ${updatedPrompt.description}</p>
-    
+    </div>
    `)
     $('form').trigger('reset')
 }
 
 const updatePromptFailure = function (error) {
   $(".auth-message").hide()
-  $('#prompt-message').text('Cannot update prompt. Please check if ID is correct.')
+  $('#prompt-display').text('Cannot update prompt. Please check if ID is correct.')
 }
 
 const deletePromptSuccess = function (response) {
   $(".auth-message").hide()
-  $('#prompt-message').text('Prompt deleted.')
+  $('#prompt-display').text('Prompt deleted.')
   $('form').trigger('reset')
 }
 
 const deletePromptFailure = function (error) {
   $(".auth-message").hide()
-  $('#prompt-message').text('Could not delete prompt. Try again with correct ID.')
+  $('#prompt-display').text('Could not delete prompt. Try again with correct ID.')
 }
 
 module.exports = {
