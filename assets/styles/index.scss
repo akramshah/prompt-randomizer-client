@@ -15,12 +15,13 @@
 }
 
 html {
-   display: flex;
-   flex-direction: column-wrap;
+  display: flex;
+  flex-direction: column-wrap;
   //  background-image: url("public/prompt-bg-img.jpg");
 }
 
-html, body{
+html,
+body {
   height: 100%;
   background-image: url("public/prompt-bg.jpg");
 }
@@ -30,12 +31,15 @@ body {
   background-color: #d9d1cf;
   width: 100%;
 }
+
 .unauthenticated {
-display: flex;
-align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
-h5, p,  h6 {
+h5,
+p,
+h6 {
   font-family: roboto-condensed;
   color: #102429;
 }
@@ -44,7 +48,7 @@ h1 {
   font-family: lobster;
   font-size: 120px;
   color: #e83642;
-  // -webkit-text-stroke: 2px #102429;
+  // -webkit-text-stroke: 1px #102429;
   margin-bottom: 50px;
 }
 
@@ -55,7 +59,7 @@ button {
 }
 
 
-button:hover{
+button:hover {
   background-color: #e83642;
   opacity: 0.7;
 }
@@ -71,11 +75,11 @@ input {
   align-items: flex-start;
 }
 
-.unauthenticated.credentials{
+.unauthenticated.credentials {
   align-self: flex-start;
 }
 
-.blurb{
+.blurb {
   margin-left: 150px;
   height: 150px;
   width: 150px;
@@ -85,7 +89,7 @@ input {
   margin-top: 10px;
 }
 
-.heading{
+.heading {
   display: flex;
   justify-content: flex-start;
 }
@@ -107,11 +111,11 @@ input {
   margin-top: 50px;
 }
 
-.prompt-index #prompt-message{
+.prompt-index #prompt-message {
   margin-top: 50px;
   font-size: 20px;
-    font-family: roboto-condensed;
-    color: #102429;
+  font-family: roboto-condensed;
+  color: #102429;
 }
 
 #prompt-display {
@@ -119,6 +123,9 @@ input {
   padding-top: 40px;
 }
 
-.user-settings .prompt-buttons, .user-settings #update-prompt, .user-settings #delete-prompt, .user-settings #change-password {
+.user-settings .prompt-buttons,
+.user-settings #update-prompt,
+.user-settings #delete-prompt,
+.user-settings #change-password {
   padding-top: 10px;
 }
