@@ -6,10 +6,10 @@ to view random prompts as well as submit, edit, and delete your own.
 
 Important Links
 Repo -
-Front-End: https://github.com/akramshah/prompt-randomizer-client
+Front-End: https://github.com/akramshah/scriptd-prompt-client
 Back-End: https://github.com/akramshah/prompt_express_api
 
-Deployed Front-End: https://akramshah.github.io/prompt-randomizer-client/
+Deployed Front-End: https://akramshah.github.io/scriptd-prompt-client/
 Deployed API: https://pure-reef-50062.herokuapp.com
 
 Planning Story:
