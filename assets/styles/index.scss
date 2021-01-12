@@ -129,3 +129,11 @@ input {
 .user-settings #change-password {
   padding-top: 10px;
 }
+
+button:focus {
+  outline: 0;
+}
+
+input:focus {
+  outline: 0;
+}
