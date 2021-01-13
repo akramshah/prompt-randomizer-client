@@ -82,7 +82,7 @@ const randomPromptSuccess = function (response) {
 };
 
 const randomPromptFailure = function (error) {
-  $(".auth-message").hide();
+  $(".auth-message").show();
   $("#prompt-message").text("Cannot view prompts.");
 };
 
