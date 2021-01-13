@@ -8,7 +8,7 @@ const signUpSuccess = function (response) {
 }
 
 const signUpFailure = function (error) {
-  $('.auth-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
+  $('#unauthenticated-message').text('Sign-up failed. Error: ' + error.responseJSON.message)
 }
 const signInSuccess = function (response) {
   $("#new-prompt").hide();
@@ -38,8 +38,7 @@ const changePasswordSuccess = function (response) {
 }
 
 const changePasswordFailure = function (error) {
-  $(".auth-message").show()
-  $('.auth-message').text('Password change failed. Error: ' + error.responseJSON.message)
+  $("#prompt-display").html('Password change failed. Please make sure your password is correct.')
 }
 
 const signOutSuccess = function (response) {

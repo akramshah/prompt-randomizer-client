@@ -28,6 +28,16 @@ const viewPromptsSuccess = function (response) {
   store.prompt = response.prompt;
   const userPrompts = store.prompt;
   let promptsHtml = "";
+  if (userPrompts.length === 0) {
+        const promptHtml = `
+    <div>
+    <p><b>No prompts to display. Please submit a prompt.</b></p>
+    `;
+    promptsHtml += promptHtml;
+  ;
+  $(".auth-message").hide();
+  $("#prompt-display").html(promptsHtml);
+} else {
   userPrompts.forEach(function (prompt) {
     const promptHtml = `
     <div>
@@ -39,9 +49,11 @@ const viewPromptsSuccess = function (response) {
     promptsHtml += promptHtml;
   });
   $(".auth-message").hide();
-  $("#prompt-display").html(promptsHtml);
+  $("#prompt-display").html(`<h6><b>Your Prompts:<h6><br>`
+   + promptsHtml);
   // console.log(store.prompt)
-};
+}
+}
 
 const viewPromptsFailure = function (error) {
   $(".auth-message").hide();

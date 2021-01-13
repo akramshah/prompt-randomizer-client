@@ -95,7 +95,7 @@ const onChangepwButton = function (event) {
 }
 
 const onHidePrompts = function (event) {
-  $("#prompt-display").html('');
+  $("#prompt-display").html('Prompts Hidden.');
 }
 
 const onSubmitButton = function (event) {
