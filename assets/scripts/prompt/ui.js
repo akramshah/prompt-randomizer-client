@@ -75,7 +75,7 @@ const randomPromptSuccess = function (response) {
     <p>Description: ${randomPrompt.description}</p>
     </div>
     `);
-    console.log(randomPrompt);
+    // console.log(randomPrompt);
   };
   randomize();
   // console.log(userPrompts)
