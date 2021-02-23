@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prompt Randomizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Do not add `script` tags-->
+    <script
+      src="public/vendor.js"
+      type="text/javascript"
+      charset="utf-8"
+      defer
+    ></script>
+    <script
+      src="public/application.js"
+      type="text/javascript"
+      charset="utf-8"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <container class="heading">
+      <h1>Script'd</h1>
+      <container class="header-buttons">
+        <container class="back">
+          <button id="back-button" type="button">Back</button>
+        </container>
+        <container class="signout-button">
+          <button id="sign-out" type="button" name="button">Sign Out</button>
+        </container>
+        <container class="user-settings-button">
+          <button id="user-settings" type="button" name="button">
+            User Settings
+          </button>
+        </container>
+      </container>
+    </container>
+    <container class="unauthenticated">
+      <container class="credentials">
+        <container class="sign-up">
+          <p id="unauthenticated-message"></p>
+          <form id="sign-up">
+            <input
+              name="credentials[email]"
+              type="text"
+              placeholder="Enter Email"
+            />
+            <input
+              name="credentials[password]"
+              type="password"
+              placeholder="Enter Password"
+            />
+            <input
+              name="credentials[password_confirmation]"
+              type="password"
+              placeholder="Confirm Password"
+            />
+            <button type="submit">New!</button>
+          </form>
+        </container>
+        <container class="sign-in">
+          <form id="sign-in">
+            <input
+              name="credentials[email]"
+              type="text"
+              placeholder="Enter Email"
+            />
+            <input
+              name="credentials[password]"
+              type="password"
+              placeholder="Enter Password"
+            />
+            <button type="submit">Log-In</button>
+          </form>
+        </container>
+      </container>
+      <container class="blurb">
+        <p>
+          Welcome to Script'd. This is a web-app created to counter writer's
+          block. View tons of user-submitted, free-to-use writing prompts to
+          exercise the right side of your brain or use it to begin your new
+          Oscar-worthy script.
+        </p>
+      </container>
+    </container>
+    <container class="user-settings">
+      <container class="prompt-buttons">
+        <button id="view-prompts" type="button">View Your Prompts</button>
+        <button id="hide-prompts" type="button">Hide Prompts</button>
+        <button id="update-prompts" type="button">Update Prompts</button>
+        <button id="delete-prompts" type="button">Delete Prompts</button>
+        <button id="change-pw" type="button">Change Password</button>
+      </container>
+      <container class="user-forms">
+        <form id="update-prompt">
+          <input name="prompt[_id]" type="text" placeholder="Prompt ID" />
+          <input name="prompt[title]" type="text" placeholder="Enter Title" />
+          <input
+            name="prompt[description]"
+            type="text"
+            placeholder="Enter Description"
+          />
+          <button type="submit">Update</button>
+        </form>
+        <form id="delete-prompt">
+          <input name="prompt[_id]" type="text" placeholder="Prompt ID" />
+          <button type="submit">Delete</button>
+        </form>
+        <form id="change-password">
+          <input
+            type="password"
+            placeholder="Enter Old Password"
+            name="passwords[old]"
+          />
+          <input
+            type="password"
+            placeholder="Enter New Password"
+            name="passwords[new]"
+          />
+          <button type="submit">Change Password</button>
+        </form>
+      </container>
+      <container class="prompt-display"> <p id="prompt-display"></p></container>
+    </container>
+    <container class="prompt-home">
+      <container class="auth-message"><p id="auth-message"></p></container>
+
+      <container class="randomizer">
+        <button id="random-prompt" type="button">Random Prompt</button>
+      </container>
+      <container class="prompter">
+        <form id="new-prompt">
+          <input name="prompt[title]" type="text" placeholder="Enter Title" />
+          <input
+            name="prompt[description]"
+            type="text"
+            placeholder="Enter Description"
+          />
+          <button type="submit">Submit Prompt</button>
+        </form>
+        <button id="submit-prompts" type="button">Submit A Prompt</button>
+      </container>
+      <container class="prompt-index"> <p id="prompt-message"></p></container>
+    </container>
+  </body>
+</html>
